@@ -5,13 +5,14 @@ var share = document.getElementById('share');
 var btnContinue = document.getElementById('btnContinue');
 var btnDownload = document.getElementById('btnDownload');
 var editedObj;
+var adressNumber;
 
 function goEditable(){
     $('.modelo *').attr('contenteditable', true);
 }
 
 btnContinue.onclick = function() {
-
+    $('#share').html('');
     html2canvas(node, {
        scale:1.7
       }).then(function(canvas) {
@@ -43,11 +44,18 @@ $('.models .item').on('click', function(){
 
 $('#postType').change(function() {
     if($(this).is(":checked")) {
-        $('#newProject').removeClass('feed');
-        $('#newProject').addClass('story');
+        $('#newProject, input[type="range"]').removeClass('feed');
+        $('#newProject, input[type="range"]').addClass('story');
+
+        actualModel = $('#newProject')["0"].childNodes[1].id;
+        adressNumber = $('#'+actualModel+ ' .numero').html().replace(', ', ''); 
+        $('#'+actualModel+ ' .numero').remove();
+        $('#'+actualModel+ ' .cidade').prepend(adressNumber+ ' ');
+
     }else{
-        $('#newProject').addClass('feed');
-        $('#newProject').removeClass('story');
+        $('#newProject, input[type="range"]').addClass('feed');
+        $('#newProject, input[type="range"]').removeClass('story');
+        
     }
       
 });

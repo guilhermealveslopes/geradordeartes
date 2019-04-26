@@ -25,9 +25,10 @@ html, body { width: 100%; overflow-x: hidden; }
 
 
  #blah { visibility: hidden; display: none; } 
- #newProject { border: none; background-image: url('default.png'); transition: .5s ease-in-out; background-size: cover; background-position-x: center; width: 600px; height: 600px; color: #fff; overflow: hidden!important; } 
+ #newProject { border: none; background-image: url('default.png'); transition: .5s ease-in-out; background-size: contain; background-position-x: center; width: 600px; height: 600px; color: #fff; overflow: hidden!important; } 
  #newProject.feed { width: 900px; height: 900px; } 
- #newProject.story { width: 500px; height:700px; } 
+ #newProject.story { width: 540px; height: 960px; } 
+ 
  .hovered { border:2px solid gray; } 
  #template { position: relative; display: flex; padding: 0px; } 
  .toolbar { position: absolute; border:0; left: 100%; display: flex; flex-direction: column; } 
@@ -82,6 +83,7 @@ input:checked + .slider:before { -webkit-transform: translateX(26px); -ms-transf
 .slider.round { border-radius: 34px; border: 2px solid black; } 
 .slider.round:before { border-radius: 50%; } 
 
-#backgroundRangeY { position: absolute; left: -480px; transform: rotate(90deg); width: 900px; top: 435px; } 
-#backgroundRangeX { width: 900px; } 
-
+#backgroundRangeY { transition: .5s ease-in-out; position: absolute; left: -480px; transform: rotate(90deg); width: 900px; top: 435px; } 
+#backgroundRangeX { transition: .5s ease-in-out; width: 900px; } 
+#backgroundRangeX.story { width: 540px; } 
+#backgroundRangeY.story { left: -510px; width: 960px; top: 465px; } 
