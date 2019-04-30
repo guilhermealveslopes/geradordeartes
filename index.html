@@ -15,6 +15,7 @@
     <link href="main.css" rel="stylesheet" type="text/css">
     <link href="modelos.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 </head>
 <body>
 
@@ -82,7 +83,7 @@
                         </div> -->
                     </label>
                     </li>
-                    <input id="file-input" class="file-chooser" type="file" onchange="readURL(this)">
+                    <input id="file-input" class="file-chooser" type="file" name="MAX_FILE_SIZE" value="1048576" onchange="readURL(this)">
                 </ul>
             </div>
 
@@ -192,7 +193,7 @@
             </div>
             <footer>
                 <div class="endereco">
-                    <p class="rua">rua montevidéu<span class="numero">, 900</span></p>
+                    <p class="rua"  contenteditable="true">rua montevidéu<span class="numero">, 900</span></p>
                     <p class="cidade">penha - rj</p>
                 </div>
             </footer>

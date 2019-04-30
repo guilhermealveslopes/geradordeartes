@@ -8,14 +8,45 @@ var editedObj;
 var adressNumber;
 
 function goEditable(){
-    $('.modelo *').attr('contenteditable', true);
+    $('p').attr('contenteditable', true);
 }
+
+function exportCanvasAsPNG(id, fileName) {
+
+    var canvasElement = document.getElementById(id);
+
+    var MIME_TYPE = "image/png";
+
+    var imgURL = canvasElement.toDataURL(MIME_TYPE);
+
+    var dlLink = document.createElement('a');
+    dlLink.download = fileName;
+    dlLink.href = imgURL;
+    dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
+
+    document.body.appendChild(dlLink);
+    dlLink.click();
+    document.body.removeChild(dlLink);
+}
+
+$(document).on('keyup', 'p', function(){
+    if($(this).text().length == 0){
+        $(this).addClass('ghost');
+    }
+    else{
+        $(this).removeClass('ghost');
+    }
+    console.log($(this).text().length);
+})
+
+
 
 btnContinue.onclick = function() {
     $('#share').html('');
     html2canvas(node, {
        scale:1.7
       }).then(function(canvas) {
+        canvas.id = 'canvas';
         share.append(canvas);
         $("label[for='Three']").click();
         var a = document.createElement('a');
@@ -28,17 +59,42 @@ btnContinue.onclick = function() {
 
 btnDownload.onclick = function() {
     var download = document.getElementById('shareImg');
-    download.click();
+
+    exportCanvasAsPNG('canvas', 'arte');
 }
+
+
+var uploadField = document.getElementById("file-input");
+
+uploadField.onchange = function() {
+    if(this.files[0].size > 107200){
+        Swal.fire({
+            title: 'Erro!',
+            text: 'Tamanho máximo de upload 1MB!',
+            type: 'error',
+            confirmButtonText: 'Ok'
+          })
+        this.value = "";
+    };
+};
+
 
 $('.models .item').on('click', function(){
     var model = $(this).html().slugify();
     $('#newProject .modelo').html($('.model-'+model).html());
     $('#newProject').css('background-image', 'url(assets/imgs/default.png)');
     $('#newProject .modelo').attr('id', model);
+
     $("label[for='Two']").click();
 
-    goEditable();
+    // $('#'+model+ ' p').each(function(){
+    //     width = $(this)["0"].clientWidth + 60;
+    //     height = $(this)["0"].clientHeight;
+    //     $(this).css('max-width', width + 60);
+    //     $(this).css('max-height', height);
+    // })
+
+    
     console.log('Escolhido o modelo ' + model);
 })
 
