@@ -4,18 +4,45 @@ var node = document.getElementById('newProject');
 var share = document.getElementById('share');
 var btnContinue = document.getElementById('btnContinue');
 var btnDownload = document.getElementById('btnDownload');
+var source_img = document.getElementById('shareImg');
 var editedObj;
 var adressNumber;
+
+function compressMe(){
+    console.log('comprimindo');
+    source_img = document.getElementById('shareImg');
+    target_img = document.getElementById('shareImg');
+
+    var quality =  60;
+    output_format = 'jpg';
+    target_img.src = jic.compress(source_img,quality,output_format).src;  
+    $(target_img).addClass('compreesed');
+}
 
 function goEditable(){
     $('p').attr('contenteditable', true);
 }
 
+function canvasMe(target) {
+  
+    html2canvas(source_img, {
+       scale:1.7
+      }).then(function(canvas) {
+        canvas.id = 'uploadedImg';
+        share.append(canvas);
+        $("label[for='Three']").click();
+        var a = document.createElement('a');
+        a.href = canvas.toDataURL("image/png");
+        a.id = 'shareImg';
+        a.download = 'myfile.png';
+        share.append(a);
+      });
+}
 function exportCanvasAsPNG(id, fileName) {
 
     var canvasElement = document.getElementById(id);
 
-    var MIME_TYPE = "image/jpeg";
+    var MIME_TYPE = "image/png";
 
     var imgURL = canvasElement.toDataURL(MIME_TYPE);
 
@@ -50,7 +77,7 @@ btnContinue.onclick = function() {
         share.append(canvas);
         $("label[for='Three']").click();
         var a = document.createElement('a');
-        a.href = canvas.toDataURL("image/jpeg");
+        a.href = canvas.toDataURL("image/png");
         a.id = 'shareImg';
         a.download = 'myfile.png';
         share.append(a);
@@ -67,15 +94,7 @@ btnDownload.onclick = function() {
 // var uploadField = document.getElementById("file-input");
 
 // uploadField.onchange = function() {
-//     if(this.files[0].size > 107200){
-//         Swal.fire({
-//             title: 'Erro!',
-//             text: 'Tamanho mÃ¡ximo de upload 1MB!',
-//             type: 'error',
-//             confirmButtonText: 'Ok'
-//           })
-//         this.value = "";
-//     };
+//     compressMe(sourceID, targetID
 // };
 
 
@@ -127,7 +146,7 @@ $('#backgroundRangeY').on('change',function(){
     $('#newProject').css('background-position-y', '-'+$(this).val()+'px');
 })
 
-/////////////////// FUNÃ‡Ã”ES DE USABILIDADE
+/////////////////// FUNÇÔES DE USABILIDADE
 
 // Ativa o movimento do elemento por classe
 // function makeMeDraggable(obj) {
@@ -167,7 +186,7 @@ $(document).delegate('*', 'click', function(event) {
     if(notIn(obj)){}
     else{
         // $('#builderz').addClass('flex');
-        // Se o elemento em foco jÃ¡ existe, remove a propriedade de mover.
+        // Se o elemento em foco já existe, remove a propriedade de mover.
         // if($(editedObj).hasClass('ui-draggable ')){
         //     editedObj.draggable('disable');
         // }
@@ -196,17 +215,16 @@ $('.labels label').on('click', function(){
     $('#step'+$(this).attr('for')).fadeIn();
     $('#step'+$(this).attr('for')).addClass('active');
 
-    goEditable()
 })
-//////////////////// FUNÃ‡Ã”ES DE CRUD
+//////////////////// FUNÇÔES DE CRUD
 
-// Define o tipo de objeto que nÃ£o recebe as propriedades de ediÃ§Ã£o
+// Define o tipo de objeto que não recebe as propriedades de edição
 function notIn(obj) {
     parent = false;
     // Se o objeto tem um pai
     if($(obj).parent()){
         parentObj = $(obj).parent();
-        // E o pai nÃ£o for a Ã¡rea de novo projeto
+        // E o pai não for a área de novo projeto
         if($(parentObj).attr('id') != 'newProject'){
             parent = true;
         }
@@ -218,15 +236,11 @@ function notIn(obj) {
     }
 }
 
-$('.icon-picture-o').on('click',function(){
- 
-})
-
 // Deleta o elemento em foco
 $('#delete').on('click',function(){
     editedObj.remove();
 })
-// Ativa opÃ§Ã£o de mover o elemento em foco
+// Ativa opção de mover o elemento em foco
 $('#download').on('click',function(){
     var canvas = document.getElementById('newProject'); 
     var ctx = $('#newProject')[0].getContext('2d');
@@ -237,30 +251,31 @@ $('#download').on('click',function(){
 //     editedObj.draggable('disable');
 //  })
 
+
+
+// Read Upload File and compress it
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
-        
 
         reader.onload = function (e) {
-            $('#uploadedImg').attr('src', e.target.result);
-            document.getElementById('newProject').style.backgroundImage = "url('"+e.target.result+"')";
+            $('#shareImg').attr('src', e.target.result);
+            canvasMe('shareImg');
+           
         };
 
         reader.readAsDataURL(input.files[0]);
-        setTimeout(() => {
-            
-            console.log('[####] comprimindo imagem...');
-            source_img = document.getElementById('uploadedImg');
-            target_img = document.getElementById('shareImg');
+
+        console.log('[####] comprimindo img...');
+       setTimeout(() => {
+            source_img = document.getElementById('shareImg');
         
             var quality =  60;
             output_format = 'jpg';
-            target_img.src = jic.compress(source_img,quality,output_format).src;  
-            $(target_img).addClass('compreesed');
-            console.log('[####] imagem comprimida com sucesso!');
-            
-        }, 500);
+            finalCanvas = jic.compress(source_img,quality,output_format).src;  
+            document.getElementById('newProject').style.backgroundImage = "url('"+finalCanvas+"')";
+            console.log('[####] img comprimida com sucesso!');
+       }, 400);
     }
 }
 
@@ -292,17 +307,17 @@ if (!String.prototype.slugify) {
 	String.prototype.slugify = function () {
 
 	return  this.toString().toLowerCase()
-	.replace(/[Ã Ã€Ã¡ÃÃ¢Ã‚Ã£Ã¤Ã„Ã…Ã¥Âª]+/g, 'a')       
-	.replace(/[Ã¨ÃˆÃ©Ã‰ÃªÃŠÃ«Ã‹]+/g, 'e')       	
-	.replace(/[Ã¬ÃŒÃ­ÃÃ®ÃŽÃ¯Ã]+/g, 'i')       	
-	.replace(/[Ã²Ã’Ã³Ã“Ã´Ã”ÃµÃ•Ã¶Ã–Âº]+/g, 'o')       	
-	.replace(/[Ã¹Ã™ÃºÃšÃ»Ã›Ã¼Ãœ]+/g, 'u')       	
-	.replace(/[Ã½ÃÃ¿Å¸]+/g, 'y')       		
-	.replace(/[Ã±Ã‘]+/g, 'n')       			
-	.replace(/[Ã§Ã‡]+/g, 'c')       			
-	.replace(/[ÃŸ]+/g, 'ss')       			
-	.replace(/[Ã†Ã¦]+/g, 'ae')       			
-	.replace(/[Ã˜Ã¸Å“]+/g, 'oe')       		
+	.replace(/[àÀáÁâÂãäÄÅåª]+/g, 'a')       
+	.replace(/[èÈéÉêÊëË]+/g, 'e')       	
+	.replace(/[ìÌíÍîÎïÏ]+/g, 'i')       	
+	.replace(/[òÒóÓôÔõÕöÖº]+/g, 'o')       	
+	.replace(/[ùÙúÚûÛüÜ]+/g, 'u')       	
+	.replace(/[ýÝÿŸ]+/g, 'y')       		
+	.replace(/[ñÑ]+/g, 'n')       			
+	.replace(/[çÇ]+/g, 'c')       			
+	.replace(/[ß]+/g, 'ss')       			
+	.replace(/[Ææ]+/g, 'ae')       			
+	.replace(/[Øøœ]+/g, 'oe')       		
 	.replace(/[%]+/g, 'pct')       			
 	.replace(/\s+/g, '-')           		
     .replace(/[^\w\-]+/g, '')       		

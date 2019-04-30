@@ -10,17 +10,15 @@
     <script src="https://cdn.bootcss.com/dom-to-image/2.6.0/dom-to-image.min.js"></script>
     <script src="https://cdn.bootcss.com/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-    <script src="jic.js"></script>
     <script src="dom.js"></script>
     <link href="fonts.css" rel="stylesheet" type="text/css">
-    <link href="main.css" rel="stylesheet" type="text/css">
-    <link href="modelos.css" rel="stylesheet" type="text/css">
+    <link href="main.css?v=<?php echo rand() ?>" rel="stylesheet" type="text/css">
+    <link href="modelos.css<?php echo rand() ?>" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 </head>
 <body>
-    <img src="" class="hide" id="shareImg" alt="">
-    <img src="" class="hide" id="uploadedImg" alt="">
+
     <div class="globals">
         <div class="labels">
             <label for="One" class="label">Escolher modelo</label>
@@ -288,6 +286,6 @@
 
     </div><!-- /temporaryBlocks  -->
 
-    <script src="main.js"></script>
+    <script src="main.js<?php echo rand() ?>"></script>
 </body>
 </html>
