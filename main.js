@@ -80,7 +80,7 @@ btnDownload.onclick = function() {
 
 
 $('.models .item').on('click', function(){
-    var model = $(this).html().slugify();
+    var model = slugify($(this).html());
     $('#newProject .modelo').html($('.model-'+model).html());
     $('#newProject').css('background-image', 'url(assets/imgs/default.png)');
     $('#newProject .modelo').attr('id', model);
@@ -286,29 +286,26 @@ $('#dual-background').on('click',function(){
 })
 
 
-// Slugify
-
-if (!String.prototype.slugify) {
-	String.prototype.slugify = function () {
-
-	return  this.toString().toLowerCase()
-	.replace(/[Ã Ã€Ã¡ÃÃ¢Ã‚Ã£Ã¤Ã„Ã…Ã¥Âª]+/g, 'a')       
-	.replace(/[Ã¨ÃˆÃ©Ã‰ÃªÃŠÃ«Ã‹]+/g, 'e')       	
-	.replace(/[Ã¬ÃŒÃ­ÃÃ®ÃŽÃ¯Ã]+/g, 'i')       	
-	.replace(/[Ã²Ã’Ã³Ã“Ã´Ã”ÃµÃ•Ã¶Ã–Âº]+/g, 'o')       	
-	.replace(/[Ã¹Ã™ÃºÃšÃ»Ã›Ã¼Ãœ]+/g, 'u')       	
-	.replace(/[Ã½ÃÃ¿Å¸]+/g, 'y')       		
-	.replace(/[Ã±Ã‘]+/g, 'n')       			
-	.replace(/[Ã§Ã‡]+/g, 'c')       			
-	.replace(/[ÃŸ]+/g, 'ss')       			
-	.replace(/[Ã†Ã¦]+/g, 'ae')       			
-	.replace(/[Ã˜Ã¸Å“]+/g, 'oe')       		
-	.replace(/[%]+/g, 'pct')       			
-	.replace(/\s+/g, '-')           		
+function slugify(text)
+{
+  return text.toString().toLowerCase()
+    .replace(/\s+/g, '-') 
+    .replace(/[àÀáÁâÂãäÄÅåª]+/g, 'a')       
+    .replace(/[èÈéÉêÊëË]+/g, 'e')       	
+    .replace(/[ìÌíÍîÎïÏ]+/g, 'i')       	
+    .replace(/[òÒóÓôÔõÕöÖº]+/g, 'o')       	
+    .replace(/[ùÙúÚûÛüÜ]+/g, 'u')       	
+    .replace(/[ýÝÿŸ]+/g, 'y')       		
+    .replace(/[ñÑ]+/g, 'n')       			
+    .replace(/[çÇ]+/g, 'c')       			
+    .replace(/[ß]+/g, 'ss')       			
+    .replace(/[Ææ]+/g, 'ae')       			
+    .replace(/[Øøœ]+/g, 'oe')       		
+    .replace(/[%]+/g, 'pct')       			
+    .replace(/\s+/g, '-')           		
     .replace(/[^\w\-]+/g, '')       		
     .replace(/\-\-+/g, '-')         		
     .replace(/^-+/, '')             		
-    .replace(/-+$/, '');            		
-    
-	};
+    .replace(/-+$/, '');         
 }
+
