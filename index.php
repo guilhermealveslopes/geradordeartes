@@ -7,13 +7,11 @@
     <title>ADVEC</title>
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
     <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
-    <script src="https://cdn.bootcss.com/dom-to-image/2.6.0/dom-to-image.min.js"></script>
     <script src="https://cdn.bootcss.com/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-    <script src="dom.js"></script>
     <link href="fonts.css" rel="stylesheet" type="text/css">
     <link href="main.css?v=<?php echo rand() ?>" rel="stylesheet" type="text/css">
-    <link href="modelos.css<?php echo rand() ?>" rel="stylesheet" type="text/css">
+    <link href="modelos.css?v=<?php echo rand() ?>" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 </head>
@@ -88,6 +86,14 @@
             </div>
 
             <div id="newProject" style="color:white;" class="editDisabled feed">
+                <div class="loading-photo">
+                    <div class="loader">
+                        <h2>Carregando</h2>
+                        <div class="loader__bar loader__bar--1"></div>
+                        <div class="loader__bar loader__bar--2"></div>
+                        <div class="loader__bar loader__bar--3"></div>
+                    </div>
+                </div>
                 <div class="modelo">
 
 
@@ -187,8 +193,8 @@
                     </div>
                 </div>
                 <div class="col pr">
-                    <p>Pr. Silas</p>
-                    <p>Malafaia</p>
+                    <p>Pr. Silas
+                    Malafaia</p>
                 </div>
             </div>
             <footer>
@@ -228,8 +234,8 @@
                         </div>
                     </div>
                     <div class="col data">
-                        <p>Pr. Felipe</p>
-                        <p>Panza</p>
+                        <p>Pr. Felipe
+                        Panza</p>
                     </div>
                 </div>
             </div>
@@ -286,6 +292,6 @@
 
     </div><!-- /temporaryBlocks  -->
 
-    <script src="main.js<?php echo rand() ?>"></script>
+    <script src="main.js?v=<?php echo rand() ?>"></script>
 </body>
 </html>

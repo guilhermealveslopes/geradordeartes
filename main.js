@@ -218,8 +218,8 @@ function notIn(obj) {
     }
 }
 
-$('.icon-picture-o').on('click',function(){
- 
+$('#file-input').on('change',function(){
+    $('.loading-photo').addClass('onLoad');
 })
 
 // Deleta o elemento em foco
@@ -259,7 +259,10 @@ function readURL(input) {
             target_img.src = jic.compress(source_img,quality,output_format).src;  
             $(target_img).addClass('compreesed');
             console.log('[####] imagem comprimida com sucesso!');
-            
+            $('.loading-photo h2').html('Comprimindo imagem');
+        }, 500);
+        setTimeout(() => {
+            $('.loading-photo').removeClass('onLoad');
         }, 500);
     }
 }

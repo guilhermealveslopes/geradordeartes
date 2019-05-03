@@ -63,7 +63,6 @@
 #newProject .modelo#vitoria .row { width: 100%; display: flex; padding: 20px 0px; justify-content: space-between; position: absolute; bottom: 55px; } 
 #newProject .modelo#vitoria .autores { display: flex; flex: 2; align-items: center; } 
 #newProject .modelo#vitoria .autores p { font-size: 21px; margin: 0; font-weight: 700; max-width: 220px; max-height: 28px; padding: 0 5px; } 
-#newProject .modelo#vitoria .autores p:first-child:after { content: ' | '; margin-left: 5px; } 
 #newProject .modelo#vitoria .autores .nomes { display: flex; border: 2px solid; padding: 10px 0; height: fit-content; justify-content: center; } 
 #newProject .modelo#vitoria .data p { font-weight: 600; font-size: 30px; margin: 0; padding: 0; line-height: 28px; } 
 #newProject .modelo#vitoria footer { left: 120px; } 
@@ -90,8 +89,7 @@
 #newProject .modelo#celebracao { flex-direction: column; padding: 50px 70px; box-sizing: border-box; justify-content: center; position: relative; } 
 #newProject .modelo#celebracao .pr { margin-right: 105px; max-width: 100%; padding: 0; display: flex; flex-direction: column; align-items: flex-end; margin-bottom: 0; } 
 #newProject .modelo#celebracao .pr p { font-weight: 600; margin: 0; padding: 0; line-height: 28px; } 
-#newProject .modelo#celebracao .pr p:first-child { font-size: 34px; max-width: 224px; font-weight: 600; max-height: 38px; display: flex; line-height: initial; } 
-#newProject .modelo#celebracao .pr p:last-child { font-size: 36px; max-width: 244px; font-weight: 600; max-height: 50px; display: flex; line-height: initial; } 
+#newProject .modelo#celebracao .pr p:first-child { font-size: 36px; max-width: 225px; font-weight: 600; max-height: 80px; display: flex; line-height: initial; align-items: flex-end; text-align: right; } 
 #newProject .modelo#celebracao .row { width: 100%; display: flex; padding: 20px 0px; justify-content: space-between; position: absolute; bottom: 55px; } 
 #newProject .modelo#celebracao .data p { max-width: 380px; font-size: 38px; margin: 0; padding: 0; font-weight: 600; max-height: 50px; } 
 #newProject .modelo#celebracao .data { display: flex; align-items: center; } 
@@ -223,6 +221,6 @@
 #newProject.story footer .endereco p { margin: 5px; font-weight: 700; font-size: 21px; line-height: 36px; max-width: 210px; max-height: 34px; } 
 #newProject.feed footer { position: absolute; bottom: 20px; left: 100px; } 
 #newProject.feed footer .endereco { display: flex; flex-direction: column; } 
-#newProject.feed footer .endereco p { margin: 0; font-weight: 700; font-size: 26px; background: none; color: white; max-width: 340px; max-height: 64px; line-height: 38px; } 
+#newProject.feed footer .endereco p { margin: 0; font-weight: 700; font-size: 26px; background: none; color: white; max-width: 340px; max-height: 34px; line-height: 28px; } 
 #newProject.feed footer .endereco p.numero { max-width: 90px; width: 80px; min-width: 50px; max-height: 34px; } 
 #newProject.feed footer .endereco .cidade { max-width: 215px; max-height: 34px; } 
