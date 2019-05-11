@@ -94,22 +94,9 @@ btnDownload.onclick = function() {
     var download = document.getElementById('shareImg');
 
     exportCanvasAsPNG('canvas', 'arte');
+    window.location.href = window.location.href
 }
 
-
-// var uploadField = document.getElementById("file-input");
-
-// uploadField.onchange = function() {
-//     if(this.files[0].size > 107200){
-//         Swal.fire({
-//             title: 'Erro!',
-//             text: 'Tamanho mÃ¡ximo de upload 1MB!',
-//             type: 'error',
-//             confirmButtonText: 'Ok'
-//           })
-//         this.value = "";
-//     };
-// };
 
 
 $('.models .item').on('click', function(){
@@ -119,14 +106,6 @@ $('.models .item').on('click', function(){
     $('#newProject .modelo').attr('id', model);
 
     $("label[for='Two']").click();
-
-    // $('#'+model+ ' p').each(function(){
-    //     width = $(this)["0"].clientWidth + 60;
-    //     height = $(this)["0"].clientHeight;
-    //     $(this).css('max-width', width + 60);
-    //     $(this).css('max-height', height);
-    // })
-
     
     console.log('Escolhido o modelo ' + model);
 })
