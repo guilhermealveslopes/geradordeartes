@@ -1,4 +1,4 @@
-* { border:2px solid transparent; zoom: 1; width: fit-content; font-family: 'Montserrat', sans-serif; min-height: 1px; } 
+* { list-style:none; border:2px solid transparent; zoom: 1; width: fit-content; font-family: 'Montserrat', sans-serif; min-height: 1px; } 
 input { background: transparent; color:white; } 
 html, body { width: 100%; overflow-x: hidden; } 
 p { overflow: hidden; } 

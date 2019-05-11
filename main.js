@@ -29,17 +29,50 @@ function exportCanvasAsPNG(id, fileName) {
     document.body.removeChild(dlLink);
 }
 
-$(document).on('keyup', 'p', function(){
-    if($(this).text().length == 0){
+$(document).on('keypress', 'p', function(e){
+    var char = $(this).text().length;
+    var maxChar = Number($(this).attr('max-char'));
+
+    if(char >= maxChar){
+        e.preventDefault();
+    }
+
+})
+
+
+
+$(document).on('keydown', 'p', function(e){
+    var char = $(this).text().length;
+    var maxChar = Number($(this).attr('max-char'));
+    var fontSize = Number($(this).css('font-size').replace('px',''));
+
+    if(char <= maxChar){
+        
+        if(char == 14){ $(this).css('font-size', 34 ) }
+        if(char == 15){ $(this).css('font-size', 32 ) }
+        if(char == 16){ $(this).css('font-size', 30 ) }
+        if(char == 17){ $(this).css('font-size', 28 ) }
+        if(char == 18){ $(this).css('font-size', 26 ) }
+        if(char == 19){ $(this).css('font-size', 24 ) }
+        if(char == 20){ $(this).css('font-size', 22 ) }
+        if(char == 21){ $(this).css('font-size', 21 ) }
+        if(char == 22){ $(this).css('font-size', 20 ) }
+        if(char == 23){ $(this).css('font-size', 18 ) }
+        if(char == 24){ $(this).css('font-size', 16 ) }
+        if(char >= 25){ $(this).css('font-size', 16 ) }
+
+    }
+  
+    console.log('Font: ' + fontSize + ' Char: ' + char);
+
+
+    if(char == 0){
         $(this).addClass('ghost');
     }
     else{
         $(this).removeClass('ghost');
     }
-    console.log($(this).text().length);
 })
-
-
 
 btnContinue.onclick = function() {
     $('#share').html('');

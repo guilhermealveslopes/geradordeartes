@@ -121,7 +121,7 @@
             <div class="mask editDisabled"></div>
             <div class="content">
                 <div class="data">
-                    <p>terça-feira</p>
+                    <p max-char="27">terça-feira</p>
                     <p>às 19h</p>
                 </div>
                 
