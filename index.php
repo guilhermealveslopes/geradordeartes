@@ -127,8 +127,8 @@
                 
                 <footer>
                     <div class="endereco">
-                        <p class="rua">rua montevidéu<span class="numero">, 900</span></p>
-                        <p class="cidade">penha - rj</p>
+                        <p class="rua">rua montevidéu, 900 <span class="cidade">penha - rj</span></p>
+                        
                     </div>
                 </footer>
             </div>
@@ -154,8 +154,8 @@
             
             <footer>
                 <div class="endereco">
-                    <p class="rua">rua montevidéu<span class="numero">, 900</span></p>
-                    <p class="cidade">penha - rj</p>
+                    <p class="rua">rua montevidéu, 900 <span class="cidade">penha - rj</span></p>
+                    
                 </div>
             </footer>
         </div>
@@ -177,8 +177,8 @@
             </div>
             <footer>
                 <div class="endereco">
-                    <p class="rua">rua montevidéu<span class="numero">, 900</span></p>
-                    <p class="cidade">penha - rj</p>
+                    <p class="rua">rua montevidéu, 900 <span class="cidade">penha - rj</span></p>
+                    
                 </div>
             </footer>
         </div>
@@ -199,8 +199,7 @@
             </div>
             <footer>
                 <div class="endereco">
-                    <p class="rua"  contenteditable="true">rua montevidéu<span class="numero">, 900</span></p>
-                    <p class="cidade">penha - rj</p>
+                    <p class="rua">rua montevidéu, 900 <span class="cidade">penha - rj</span></p>
                 </div>
             </footer>
         </div>
@@ -216,8 +215,7 @@
                 </div>
                 <footer>
                     <div class="endereco">
-                        <p class="rua">rua montevidéu<span class="numero">, 900</span></p>
-                        <p class="cidade">penha - rj</p>
+                        <p class="rua">rua montevidéu, 900 <span class="cidade">penha - rj</span></p>
                     </div>
                 </footer>
             </div>
@@ -242,8 +240,8 @@
             
             <footer>
                 <div class="endereco">
-                    <p class="rua">rua montevidéu<span class="numero">, 900</span></p>
-                    <p class="cidade">penha - rj</p>
+                    <p class="rua">rua montevidéu, 900 <span class="cidade">penha - rj</span></p>
+                    
                 </div>
             </footer>
         </div>
@@ -265,8 +263,8 @@
             </div>
             <footer>
                 <div class="endereco">
-                    <p class="rua">rua montevidéu<span class="numero">, 900</span></p>
-                    <p class="cidade">penha - rj</p>
+                    <p class="rua">rua montevidéu, 900 <span class="cidade">penha - rj</span></p>
+                    
                 </div>
             </footer>
         </div>
@@ -284,8 +282,8 @@
             
             <footer>
                 <div class="endereco">
-                    <p class="rua">rua montevidéu<span class="numero">, 900</span></p>
-                    <p class="cidade">penha - rj</p>
+                    <p class="rua">rua montevidéu, 900 <span class="cidade">penha - rj</span></p>
+                    
                 </div>
             </footer>
         </div>
