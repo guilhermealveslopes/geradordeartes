@@ -73,7 +73,7 @@
 		left: 0;
 		right: 0;
 		margin: auto;
-		background-image: url("loginbg.jpg");
+		background-image: url("../img/loginbg.jpg");
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
