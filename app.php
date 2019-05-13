@@ -9,9 +9,9 @@
     <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
     <script src="https://cdn.bootcss.com/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-    <link href="fonts.css" rel="stylesheet" type="text/css">
-    <link href="main.css?v=<?php echo rand() ?>" rel="stylesheet" type="text/css">
-    <link href="modelos.css?v=<?php echo rand() ?>" rel="stylesheet" type="text/css">
+    <link href="assets/css/fonts.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/main.css?v=<?php echo rand() ?>" rel="stylesheet" type="text/css">
+    <link href="assets/css/modelos.css?v=<?php echo rand() ?>" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 </head>
@@ -290,6 +290,6 @@
 
     </div><!-- /temporaryBlocks  -->
 
-    <script src="main.js?v=<?php echo rand() ?>"></script>
+    <script src="assets/js/main.js?v=<?php echo rand() ?>"></script>
 </body>
 </html>
