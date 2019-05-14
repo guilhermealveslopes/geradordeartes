@@ -5,18 +5,18 @@ p { overflow: hidden; }
 .ghost { border: 2px solid #6d6d6d!important; width: 50px; } 
 .hide { display: none!important; } 
 
-
+.mask { border: none; }
 .globals { width: 50%; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: space-between; position: relative; z-index: 99; } 
 .globals .labels { width: 100%; display: flex; justify-content: space-between; } 
 .globals .progressBar { width: 100%; } 
 .step { display: none; } 
 .step.active { display: flex!important; width: 100%; align-items: center; justify-content: center; height: auto; position: absolute; top: 120px; flex-direction: column; } 
 
-#template { position: relative; } 
+#template { position: relative;  border: none; } 
 .actionBtn { cursor: pointer; background: #162d54; color: white; padding: 15px 80px; margin-top: 10px; border-radius: 5px; } 
 .actionBtn:hover { cursor: pointer; background: #abced9; color: white; } 
 .temporaryBlocks { display: none; } 
-.toolbar ul li:hover .sub-menu { visibility: visible; opacity: 1; z-index: 99; } 
+.toolbar ul li.vitoria:hover .sub-menu { visibility: visible; opacity: 1; z-index: 99; } 
 .sub-menu { position: absolute; right: 100%; background: #0f3c8a; padding: 15px 10px; top: 0; display: flex; opacity: 0; z-index: 0; transition: .5s ease-in-out; } 
 .sub-menu img { height: 60px; width: auto; } 
 .sub-menu img:hover { opacity: .7; cursor: pointer; } 
@@ -25,7 +25,7 @@ p { overflow: hidden; }
 
 #newProject .bg1 { border: none; position: absolute; display: flex; align-items: center; justify-content: center; width: 100%; left: 0; z-index: 9; background: #2e33de7a; height: 100%; } 
 #newProject .bg2 { border: none; position: absolute; display: flex; align-items: center; justify-content: space-between; width: 100%; left: 0; z-index: 9; background: rgba(46, 51, 222, 0.47843137254901963); height: 100%; } 
-#newProject .bg2 .col { flex: 1; height: 100%; display: flex; justify-content: center; align-items: center; } 
+#newProject .bg2 .col { background-size: cover!important; flex: 1; height: 100%; display: flex; justify-content: center; align-items: center; border: 0; } 
 #newProject .bg2 .col:last-child { background: rgba(16, 17, 65, 0.47843137254901963); } 
 #newProject .content { z-index: 1; width: 100%; display: flex; } 
 

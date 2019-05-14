@@ -6,6 +6,7 @@ var btnContinue = document.getElementById('btnContinue');
 var btnDownload = document.getElementById('btnDownload');
 var editedObj;
 var adressNumber;
+var backgroundCount = 0;
 
 function goEditable(){
     $('p').attr('contenteditable', true);
@@ -101,11 +102,15 @@ btnDownload.onclick = function() {
 
 $('.models .item').on('click', function(){
     var model = slugify($(this).html());
+    $('.toolbar ul li').attr('class', '');
     $('#newProject .modelo').html($('.model-'+model).html());
     $('#newProject').css('background-image', 'url(assets/imgs/default.png)');
     $('#newProject .modelo').attr('id', model);
 
     $("label[for='Two']").click();
+    if(model == 'vitoria'){
+        $('.toolbar ul li').addClass(model);
+    }
     
     console.log('Escolhido o modelo ' + model);
 })
@@ -251,12 +256,21 @@ $('#download').on('click',function(){
 
 function readURL(input) {
     if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        
 
+        var reader = new FileReader();
+        var backgroundTarget = document.getElementById('newProject');
+        var bgType = $('#file-input').attr('bgType');
+        
+        if(bgType == 'multiBgOne' || bgType == 'multiBgTwo' ){
+            var backgroundTarget = document.getElementById(bgType);
+            backgroundCount++;
+        }
+ 
         reader.onload = function (e) {
             $('#uploadedImg').attr('src', e.target.result);
-            document.getElementById('newProject').style.backgroundImage = "url('"+e.target.result+"')";
+            backgroundTarget.innerHTML = '';
+            backgroundTarget.style.background = '';
+            backgroundTarget.style.backgroundImage = "url('"+e.target.result+"')";
         };
 
         reader.readAsDataURL(input.files[0]);
@@ -276,6 +290,11 @@ function readURL(input) {
         setTimeout(() => {
             $('.loading-photo').removeClass('onLoad');
         }, 500);
+
+        if(backgroundCount >= 2){
+            $('.background-input').css('z-index', 0);
+            $('.background-input').css('background', '');
+        }
     }
 }
 
@@ -292,14 +311,24 @@ $('#single-background').on('click',function(){
 $('#dual-background').on('click',function(){
     $('.background-input').remove();
     $('#newProject').prepend('<div class="bg2 background-input">' +
-    '<div class="col">'+
-    '<img src="assets/icon/single-background.png" alt="">'+
+    '<div class="col" id="multiBgOne">'+
+    '<img class="input" bgType="multiBgOne" src="assets/icon/single-background.png" alt="">'+
     '</div>'+
-    '<div class="col">'+
-    '<img src="assets/icon/single-background.png" alt="">'+
+    '<div class="col" id="multiBgTwo">'+
+    '<img class="input" bgType="multiBgTwo" src="assets/icon/single-background.png" alt="">'+
     '</div>');
+});
+
+$('.sub-menu img').on('click', function(e){
+    backgroundCount = 0;
+    e.preventDefault();
 })
 
+$('#template').delegate('.input', 'click', function(e){
+    console.log('click');
+    var bgID = $(this).attr('bgType');
+    $('#file-input').attr('bgType', bgID).click();
+})
 
 function slugify(text)
 {

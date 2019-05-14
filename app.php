@@ -75,13 +75,13 @@
                     <li class="editDisabled">
                     <label for="file-input" class="editDisabled">
                         <i class="icon-picture-o"></i>
-                        <!-- <div class="sub-menu">
+                        <div class="sub-menu">
                             <img id="single-background" src="assets/icon/single-background.png" alt="">
                             <img id="dual-background" src="assets/icon/dual-background.png" alt="">
-                        </div> -->
+                        </div>
                     </label>
                     </li>
-                    <input id="file-input" class="file-chooser" type="file" name="MAX_FILE_SIZE" value="1048576" onchange="readURL(this)">
+                    <input id="file-input" class="file-chooser" type="file" onchange="readURL(this)">
                 </ul>
             </div>
 
@@ -127,7 +127,7 @@
                 
                 <footer>
                     <div class="endereco">
-                        <p class="rua">rua montevidéu, 900 <span class="cidade">penha - rj</span></p>
+                        <p class="rua"><span class="rua">rua montevidéu, 900</span> <span class="cidade">penha - rj</span></p>
                         
                     </div>
                 </footer>
@@ -154,7 +154,7 @@
             
             <footer>
                 <div class="endereco">
-                    <p class="rua">rua montevidéu, 900 <span class="cidade">penha - rj</span></p>
+                    <p class="rua"><span class="rua">rua montevidéu, 900</span> <span class="cidade">penha - rj</span></p>
                     
                 </div>
             </footer>
@@ -177,7 +177,7 @@
             </div>
             <footer>
                 <div class="endereco">
-                    <p class="rua">rua montevidéu, 900 <span class="cidade">penha - rj</span></p>
+                    <p class="rua"><span class="rua">rua montevidéu, 900</span> <span class="cidade">penha - rj</span></p>
                     
                 </div>
             </footer>
@@ -199,7 +199,7 @@
             </div>
             <footer>
                 <div class="endereco">
-                    <p class="rua">rua montevidéu, 900 <span class="cidade">penha - rj</span></p>
+                    <p class="rua"><span class="rua">rua montevidéu, 900</span> <span class="cidade">penha - rj</span></p>
                 </div>
             </footer>
         </div>
@@ -215,7 +215,7 @@
                 </div>
                 <footer>
                     <div class="endereco">
-                        <p class="rua">rua montevidéu, 900 <span class="cidade">penha - rj</span></p>
+                        <p class="rua"><span class="rua">rua montevidéu, 900</span> <span class="cidade">penha - rj</span></p>
                     </div>
                 </footer>
             </div>
@@ -240,7 +240,7 @@
             
             <footer>
                 <div class="endereco">
-                    <p class="rua">rua montevidéu, 900 <span class="cidade">penha - rj</span></p>
+                    <p class="rua"><span class="rua">rua montevidéu, 900</span> <span class="cidade">penha - rj</span></p>
                     
                 </div>
             </footer>
@@ -263,7 +263,7 @@
             </div>
             <footer>
                 <div class="endereco">
-                    <p class="rua">rua montevidéu, 900 <span class="cidade">penha - rj</span></p>
+                    <p class="rua"><span class="rua">rua montevidéu, 900</span> <span class="cidade">penha - rj</span></p>
                     
                 </div>
             </footer>
@@ -282,14 +282,14 @@
             
             <footer>
                 <div class="endereco">
-                    <p class="rua">rua montevidéu, 900 <span class="cidade">penha - rj</span></p>
+                    <p class="rua"><span class="rua">rua montevidéu, 900</span> <span class="cidade">penha - rj</span></p>
                     
                 </div>
             </footer>
         </div>
 
     </div><!-- /temporaryBlocks  -->
-
+    <script src="assets/js/jic.js?v=<?php echo rand() ?>"></script>
     <script src="assets/js/main.js?v=<?php echo rand() ?>"></script>
 </body>
 </html>
