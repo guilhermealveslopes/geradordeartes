@@ -141,8 +141,7 @@
                 <div class="row">
                     <div class="col autores">
                         <div class="nomes">
-                            <p>Andrea Santos</p>
-                            <p>Danielle Cristina</p>
+                            <p>Andrea Santos Danielle Cristina</p>
                         </div>
                     </div>
                     <div class="col data">
@@ -166,8 +165,7 @@
             <div class="content">
                 <div class="col autores">
                     <div class="nomes">
-                        <p>Pr. Silmar Coelho</p>
-                        <p>Samuel Lima</p>
+                        <p>Pr. Silmar Coelho Samuel Lima</p>
                     </div>
                 </div>
                 <div class="col data">
@@ -252,8 +250,7 @@
             <div class="content">
                 <div class="col autores">
                     <div class="nomes">
-                        <p>Andrea Santos</p>
-                        <p>Danielle Cristina</p>
+                        <p>Andrea Santos Danielle Cristina</p>
                     </div>
                 </div>
                 <div class="col data">
