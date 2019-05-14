@@ -25,7 +25,7 @@ p { overflow: hidden; }
 
 #newProject .bg1 { border: none; position: absolute; display: flex; align-items: center; justify-content: center; width: 100%; left: 0; z-index: 9; background: #2e33de7a; height: 100%; } 
 #newProject .bg2 { border: none; position: absolute; display: flex; align-items: center; justify-content: space-between; width: 100%; left: 0; z-index: 9; background: rgba(46, 51, 222, 0.47843137254901963); height: 100%; } 
-#newProject .bg2 .col { background-size: cover!important; flex: 1; height: 100%; display: flex; justify-content: center; align-items: center; border: 0; } 
+#newProject .bg2 .col { background-size: cover!important; flex: 1; height: 100%; display: flex; justify-content: center; align-items: center; border: 0; background-position: center;} 
 #newProject .bg2 .col:last-child { background: rgba(16, 17, 65, 0.47843137254901963); } 
 #newProject .content { z-index: 1; width: 100%; display: flex; } 
 
