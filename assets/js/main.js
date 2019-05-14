@@ -41,27 +41,24 @@ $(document).on('keypress', 'p', function(e){
 })
 
 
-
 $(document).on('keydown', 'p', function(e){
     var char = $(this).text().length;
+    var startOn = 14;
+    var minFontSize = 16;
+
+    if($(this).attr('minFontSize')){
+        var minFontSize = $(this).attr('minFontSize');
+    }
+   
+    if($(this).attr('startOn')){
+        var startOn = $(this).attr('startOn');
+    }
+    
     var maxChar = Number($(this).attr('max-char'));
     var fontSize = Number($(this).css('font-size').replace('px',''));
 
-    if(char <= maxChar){
-        
-        if(char == 14){ $(this).css('font-size', 34 ) }
-        if(char == 15){ $(this).css('font-size', 32 ) }
-        if(char == 16){ $(this).css('font-size', 30 ) }
-        if(char == 17){ $(this).css('font-size', 28 ) }
-        if(char == 18){ $(this).css('font-size', 26 ) }
-        if(char == 19){ $(this).css('font-size', 24 ) }
-        if(char == 20){ $(this).css('font-size', 22 ) }
-        if(char == 21){ $(this).css('font-size', 21 ) }
-        if(char == 22){ $(this).css('font-size', 20 ) }
-        if(char == 23){ $(this).css('font-size', 18 ) }
-        if(char == 24){ $(this).css('font-size', 16 ) }
-        if(char >= 25){ $(this).css('font-size', 16 ) }
-
+    if(char <= maxChar && char >= startOn && fontSize >= minFontSize){
+        $(this).css('font-size', fontSize - 1.4 );
     }
   
     console.log('Font: ' + fontSize + ' Char: ' + char);
@@ -260,16 +257,20 @@ function readURL(input) {
         var reader = new FileReader();
         var backgroundTarget = document.getElementById('newProject');
         var bgType = $('#file-input').attr('bgType');
+        var multipleBg = false;
         
         if(bgType == 'multiBgOne' || bgType == 'multiBgTwo' ){
             var backgroundTarget = document.getElementById(bgType);
             backgroundCount++;
+            multipleBg = true;
         }
  
         reader.onload = function (e) {
             $('#uploadedImg').attr('src', e.target.result);
-            backgroundTarget.innerHTML = '';
-            backgroundTarget.style.background = '';
+            if(multipleBg){
+                backgroundTarget.innerHTML = '';
+                backgroundTarget.style.background = '';
+            }
             backgroundTarget.style.backgroundImage = "url('"+e.target.result+"')";
         };
 

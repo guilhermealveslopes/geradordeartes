@@ -121,7 +121,7 @@
             <div class="mask editDisabled"></div>
             <div class="content">
                 <div class="data">
-                    <p max-char="27">terça-feira</p>
+                    <p max-char="23" startOn="12" minFontSize="20" >terça-feira</p>
                     <p>às 19h</p>
                 </div>
                 
@@ -138,15 +138,14 @@
         <div class="model-familia">
             <div class="mask editDisabled"></div>
             <div class="content">
-                <div class="row">
+            <div class="row">
                     <div class="col autores">
                         <div class="nomes">
-                            <p>Andrea Santos Danielle Cristina</p>
+                            <p max-char="20" startOn="10">quarta às 19h</p>
                         </div>
                     </div>
                     <div class="col data">
-                        <p>03/julho</p>
-                        <p>às 19h</p>
+                        <p max-char="20">Andrea Santos</p>
                     </div>
                 </div>
             </div>
@@ -191,8 +190,7 @@
                     </div>
                 </div>
                 <div class="col pr">
-                    <p>Pr. Silas
-                    Malafaia</p>
+                    <p>Pr. Silas Malafaia</p>
                 </div>
             </div>
             <footer>
@@ -230,8 +228,7 @@
                         </div>
                     </div>
                     <div class="col data">
-                        <p>Pr. Felipe
-                        Panza</p>
+                        <p>Pr. Felipe Panza</p>
                     </div>
                 </div>
             </div>
@@ -250,12 +247,12 @@
             <div class="content">
                 <div class="col autores">
                     <div class="nomes">
-                        <p>Andrea Santos Danielle Cristina</p>
+                        <p>Pr. Silmar Coelho Samuel Lima</p>
                     </div>
                 </div>
                 <div class="col data">
-                    <p>03/jul</p>
-                    <p>às 19h</p>
+                    <p>quinta</p>
+                    <p>12 de Outubro às 19h</p>
                 </div>
             </div>
             <footer>

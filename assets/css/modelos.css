@@ -14,7 +14,7 @@
 #newProject.feed .modelo#palavra .mask { background: url('../imgs/feed/CultoDaPalavra.png'); background-size: cover; position: absolute; top: -2px; left: 0; width: 100%; height: 100%; } 
 #newProject.feed .modelo#palavra { flex-direction: column; padding: 50px 70px; box-sizing: border-box; justify-content: center; position: relative; } 
 #newProject.feed .modelo#palavra .data { max-width: 100%; display: flex; justify-content: flex-end; padding: 20px; box-sizing: border-box; align-items: flex-start; flex-direction: column; } 
-#newProject.feed .modelo#palavra .data p { font-weight: 600; font-size: 30px; border: 2px solid white; margin: 2px; padding: 5px 10px; max-width: 270px; max-height: 34px; line-height: 37px; align-items: center; display: flex; } 
+#newProject.feed .modelo#palavra .data p { font-weight: 600; font-size: 30px; border: 2px solid white; margin: 2px; padding: 5px 10px; max-width: 270px; max-height: 33px; line-height: 36px; align-items: center; display: flex; } 
 
 #newProject.story .modelo#palavra .content { z-index: 1; width: 100%; display: flex; position: absolute; bottom: 105px; left: 0; flex-direction: column; padding: 0; max-width: 560px; } 
 #newProject.story .modelo#palavra .data { max-width: 100%; display: flex; justify-content: center; padding: 0 83px; box-sizing: border-box; align-items: center; flex-direction: column; width: 100%; } 
@@ -27,26 +27,25 @@
 
 #newProject .modelo#familia .mask { background: url('../imgs/feed/CultoFamilia.png'); background-size: cover; position: absolute; top: 0; left: 0; width: 100%; height: 100%; } 
 #newProject .modelo#familia { flex-direction: column; padding: 50px 70px; box-sizing: border-box; justify-content: center; position: relative; } 
-#newProject .modelo#familia .data { max-width: 100%; padding: 0; display: flex; flex-direction: column; align-items: flex-end; } 
+#newProject .modelo#familia .data { overflow: hidden; max-width: 220px; padding: 0; display: flex; flex-direction: column; align-items: flex-end; } 
 #newProject .modelo#familia .data p { margin: 0; font-weight: 600; font-size: 30px; text-align: right; line-height: 28px; } 
 #newProject .modelo#familia footer { position: absolute; bottom: 20px; left: 100px; } 
 #newProject .modelo#familia footer .endereco p { margin: 0; font-weight: 700; font-size: 28px; } 
 #newProject .modelo#familia .row { width: 100%; display: flex; padding: 20px 40px; margin-top: 210px; justify-content: space-between; } 
-#newProject .modelo#familia .autores { display: flex; flex: 2; } 
-#newProject .modelo#familia .autores p { font-size: 24px; margin: 0; line-height: 0; padding: 15px 10px; font-weight: 700; } 
-#newProject .modelo#familia .autores .nomes { display: flex; border: 2px solid; padding: 5px; height: fit-content; } 
-#newProject .modelo#familia .data p { font-weight: 600; font-size: 30px; margin: 0; padding: 0; line-height: 28px; } 
+#newProject .modelo#familia .autores { display: flex; flex: 2; align-items: center; } 
+#newProject .modelo#familia .autores p { font-size: 24px; margin: 0; line-height: 24px; padding: 5px 10px; font-weight: 700; max-height: 28px; display: flex; align-items: center; justify-content: center; } 
+#newProject .modelo#familia .autores .nomes { display: flex; border: 2px solid; padding: 5px; height: fit-content; max-width: 370px; overflow: hidden; } 
+#newProject .modelo#familia .data p { font-weight: 600; font-size: 30px; margin: 0; padding: 0; line-height: 34px; } 
 
 #newProject.story .modelo#familia .mask { background: url('../imgs/story/CultoFamilia.png'); } 
 #newProject.story .modelo#familia .content { position: absolute; left: 0; bottom: 100px; width: 100%; padding: 0 60px 40px 60px; box-sizing: border-box; flex-direction: column; } 
 #newProject.story .modelo#familia .autores { display: flex; flex: 2; align-items: center; width: 100%; border: none; margin-bottom: 5px; } 
 #newProject.story .modelo#familia .row { width: 100%; display: flex; padding: 0; margin-top: 230px; justify-content: center; flex-direction: column; } 
-#newProject.story .modelo#familia .autores .nomes { display: flex; border: 2px solid; padding: 0px 0; height: fit-content; justify-content: center; width: 100%; } 
+#newProject.story .modelo#familia .autores .nomes { max-width: 100%; display: flex; border: 2px solid; padding: 0px 0; height: fit-content; justify-content: center; width: 100%; } 
 #newProject.story .modelo#familia .autores p { max-width: 100%; font-size: 22px; margin: 0; line-height: 24px; padding: 5px; font-weight: 700; max-height: 22px; overflow: hidden; } 
 #newProject.story .modelo#familia .data { margin-right: 60px; max-width: 100%; padding: 0; display: flex; flex-direction: row; bottom: 0; width: 100%; border: 2px solid; align-items: center; justify-content: center; } 
 #newProject.story .modelo#familia .data p { margin: 0; padding: 0; border: none; line-height: 28px; } 
 #newProject.story .modelo#familia .data p:first-child { font-size: 20px; font-weight: 600; } 
-#newProject.story .modelo#familia .data p:last-child { display:none; } 
 #newProject.story .modelo#familia footer { left: 53px; position: absolute; bottom: 95px; width: 420px; text-align: center; align-items: center; justify-content: center; display: flex; } 
 #newProject.story .modelo#familia footer .endereco p { margin: 0; font-weight: 700; font-size: 21px; line-height: 21px; } 
 
@@ -160,8 +159,8 @@
 #newProject .modelo#mulher-vitoriosa { flex-direction: column; padding: 50px 70px; box-sizing: border-box; justify-content: center; position: relative; } 
 #newProject .modelo#mulher-vitoriosa .data { margin-right: 105px; max-width: 100%; padding: 0; display: flex; flex-direction: column; align-items: flex-end; margin-bottom: 25px; } 
 #newProject .modelo#mulher-vitoriosa .data p { margin: 0; font-weight: 600; font-size: 30px; text-align: right; line-height: 28px; } 
-#newProject .modelo#mulher-vitoriosa .data p:first-child { font-size: 38px; font-weight: 600; max-width: 130px; max-height: 40px; line-height: 40px; } 
-#newProject .modelo#mulher-vitoriosa .data p:last-child { font-size: 34px; margin-top: 10px; max-width: 130px; max-height: 36px; line-height: 36px; } 
+#newProject .modelo#mulher-vitoriosa .data p:first-child { font-size: 44px; font-weight: 600; max-height: 49px; line-height: 49px; } 
+#newProject .modelo#mulher-vitoriosa .data p:last-child { font-size: 22px; margin-top: 10px; max-width: 240px; max-height: 34px; } 
 #newProject .modelo#mulher-vitoriosa .row { width: 100%; display: flex; padding: 20px 0px; justify-content: space-between; position: absolute; bottom: 55px; } 
 #newProject .modelo#mulher-vitoriosa .autores { display: flex; flex: 2; align-items: center; } 
 #newProject .modelo#mulher-vitoriosa .autores p { font-size: 23px; margin: 0; padding: 0; font-weight: 700; max-width: 100%; max-height: 24px; line-height: 24px; } 
@@ -216,6 +215,7 @@
 #newProject { transition: .5s ease-in-out; background-position: center; background-size: cover; width: 600px; height: 600px; color: #fff; overflow: hidden!important; } 
 #newProject .mask { background-size: contain!important; background-repeat: no-repeat; transition: .5s ease-in-out; width: 100%; } 
 #newProject.story #advec-logo { position: relative; } 
+#newProject.story .bg2.background-input { display: none!important; } 
 #newProject.story footer .endereco p { margin: 5px; font-weight: 700; font-size: 21px; line-height: 36px; max-width: 420px; max-height: 34px; } 
 #newProject.feed footer { position: absolute; bottom: 20px; left: 100px; } 
 #newProject.feed footer .endereco { display: flex; flex-direction: column; } 
