@@ -1,4 +1,4 @@
-/////////////////////// ESCOPO GLOBAL
+/////////////////////// ESCOPO GLOBALQueimador Infravermelho a Gás 
 
 var node = document.getElementById('newProject');
 var share = document.getElementById('share');
@@ -7,6 +7,8 @@ var btnDownload = document.getElementById('btnDownload');
 var editedObj;
 var adressNumber;
 var backgroundCount = 0;
+
+
 
 function goEditable(){
     $('p').attr('contenteditable', true);
@@ -30,8 +32,10 @@ function exportCanvasAsPNG(id, fileName) {
     document.body.removeChild(dlLink);
 }
 
+var char = 5;
+var prevCharacterCount = 0;
+
 $(document).on('keypress', 'p', function(e){
-    var char = $(this).text().length;
     var maxChar = Number($(this).attr('max-char'));
 
     if(char >= maxChar){
@@ -40,9 +44,11 @@ $(document).on('keypress', 'p', function(e){
 
 })
 
-
-$(document).on('keydown', 'p', function(e){
-    var char = $(this).text().length;
+$(document).on('keyup', 'p', function(e){
+    char = $(this).html().length;
+    var maxChar = Number($(this).attr('max-char'));
+    var defaultSize = Number($(this).attr('font-size'));
+    var defaultLength = Number($(this).attr('default-length'));
     var startOn = 14;
     var minFontSize = 16;
 
@@ -53,23 +59,50 @@ $(document).on('keydown', 'p', function(e){
     if($(this).attr('startOn')){
         var startOn = $(this).attr('startOn');
     }
-    
+
     var maxChar = Number($(this).attr('max-char'));
     var fontSize = Number($(this).css('font-size').replace('px',''));
 
-    if(char <= maxChar && char >= startOn && fontSize >= minFontSize){
-        $(this).css('font-size', fontSize - 1.4 );
+    console.log('Prev:' + prevCharacterCount);
+    console.log('char:' + char);
+     if(char > prevCharacterCount){
+        console.log('maior');
+        if(char <= maxChar && char >= startOn && fontSize >= minFontSize){
+            $(this).css('font-size', fontSize - 1.4 );
+        }
     }
-  
-    console.log('Font: ' + fontSize + ' Char: ' + char);
+    else if(char <= prevCharacterCount && char < maxChar){
+        if(fontSize <= defaultSize){
+            $(this).css('font-size', fontSize + 1.4 );
+        }
+    }
+    
+    else if(char === 1){
+        $(this).css('font-size', defaultSize );
+    }
+    else if(char >= maxChar){
+        e.preventDefault();
+    }
+
+    console.log('CHAR:' + char);
+    console.log('SIZE:' + fontSize);
+
+    prevCharacterCount = char;
 
 
+})
+
+
+
+$(document).on('keydown', 'p', function(e){
+    
     if(char == 0){
         $(this).addClass('ghost');
     }
     else{
         $(this).removeClass('ghost');
     }
+    
 })
 
 btnContinue.onclick = function() {
@@ -105,6 +138,14 @@ $('.models .item').on('click', function(){
     $('#newProject .modelo').attr('id', model);
 
     $("label[for='Two']").click();
+
+    $('#newProject p').each(function(){
+        var countingCharacters = $(this).html().length;
+        var defaultFontSize = $(this).css('font-size').replace('px' , '');
+        $(this).attr('default-length', countingCharacters);
+        $(this).attr('font-size', defaultFontSize);
+    })
+
     if(model == 'vitoria'){
         $('.toolbar ul li').addClass(model);
     }

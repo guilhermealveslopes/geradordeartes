@@ -14,7 +14,7 @@
 #newProject.feed .modelo#palavra .mask { background: url('../imgs/feed/CultoDaPalavra.png'); background-size: cover; position: absolute; top: -2px; left: 0; width: 100%; height: 100%; } 
 #newProject.feed .modelo#palavra { flex-direction: column; padding: 50px 70px; box-sizing: border-box; justify-content: center; position: relative; } 
 #newProject.feed .modelo#palavra .data { max-width: 100%; display: flex; justify-content: flex-end; padding: 20px; box-sizing: border-box; align-items: flex-start; flex-direction: column; } 
-#newProject.feed .modelo#palavra .data p { font-weight: 600; font-size: 30px; border: 2px solid white; margin: 2px; padding: 5px 10px; max-width: 270px; max-height: 33px; line-height: 36px; align-items: center; display: flex; } 
+#newProject.feed .modelo#palavra .data p { font-weight: 600; font-size: 30px; border: 2px solid white; margin: 2px; padding: 5px 10px; width: 240px; max-height: 33px; line-height: 36px; align-items: center; display: flex; justify-content: center; } 
 
 #newProject.story .modelo#palavra .content { z-index: 1; width: 100%; display: flex; position: absolute; bottom: 105px; left: 0; flex-direction: column; padding: 0; max-width: 560px; } 
 #newProject.story .modelo#palavra .data { max-width: 100%; display: flex; justify-content: center; padding: 0 83px; box-sizing: border-box; align-items: center; flex-direction: column; width: 100%; } 
@@ -33,8 +33,8 @@
 #newProject .modelo#familia footer .endereco p { margin: 0; font-weight: 700; font-size: 28px; } 
 #newProject .modelo#familia .row { width: 100%; display: flex; padding: 20px 40px; margin-top: 210px; justify-content: space-between; } 
 #newProject .modelo#familia .autores { display: flex; flex: 2; align-items: center; } 
-#newProject .modelo#familia .autores p { font-size: 24px; margin: 0; line-height: 24px; padding: 5px 10px; font-weight: 700; max-height: 28px; display: flex; align-items: center; justify-content: center; } 
-#newProject .modelo#familia .autores .nomes { display: flex; border: 2px solid; padding: 5px; height: fit-content; max-width: 370px; overflow: hidden; } 
+#newProject .modelo#familia .autores p { font-size: 30px; margin: 0; line-height: 24px; padding: 5px 10px; font-weight: 700; max-height: 28px; display: flex; align-items: center; justify-content: center;    width: 370px; } 
+#newProject .modelo#familia .autores .nomes { display: flex; border: 2px solid; padding: 5px; height: fit-content; overflow: hidden; } 
 #newProject .modelo#familia .data p { font-weight: 600; font-size: 30px; margin: 0; padding: 0; line-height: 34px; } 
 
 #newProject.story .modelo#familia .mask { background: url('../imgs/story/CultoFamilia.png'); } 
@@ -52,18 +52,17 @@
 
 /* Culto da Vitória */
 
-#newProject .modelo#vitoria .content { position: absolute; left: 0; bottom: 100px; width: 100%; padding: 0 0 0 120px; box-sizing: border-box; } 
+#newProject .modelo#vitoria .content { position: absolute; left: 0; bottom: 110px; width: 100%; padding: 0 0 0 120px; box-sizing: border-box; } 
 #newProject .modelo#vitoria .mask { background: url('../imgs/feed/CultoDaVitoria.png'); background-size: cover; position: absolute; top: 0; left: 0; width: 100%; height: 100%; } 
 #newProject .modelo#vitoria { flex-direction: column; padding: 50px 70px; box-sizing: border-box; justify-content: center; position: relative; } 
-#newProject .modelo#vitoria .data { margin-right: 105px; max-width: 100%; padding: 0; display: flex; flex-direction: column; align-items: flex-end; margin-bottom: 25px; } 
+#newProject .modelo#vitoria .data { margin-right: 105px; max-width: 100%; padding: 0; display: flex; flex-direction: column; align-items: flex-end; margin-bottom: 0; } 
 #newProject .modelo#vitoria .data p { margin: 0; font-weight: 600; font-size: 30px; text-align: right; line-height: 28px; } 
-#newProject .modelo#vitoria .data p:first-child { font-size: 44px; font-weight: 600; max-height: 49px; line-height: 49px; } 
-#newProject .modelo#vitoria .data p:last-child { font-size: 22px; margin-top: 10px; max-width: 240px; max-height: 34px; } 
+#newProject .modelo#vitoria .data p { font-weight: 600; font-size: 30px; margin: 0; padding: 0; line-height: 34px; } 
 #newProject .modelo#vitoria .row { width: 100%; display: flex; padding: 20px 0px; justify-content: space-between; position: absolute; bottom: 55px; } 
 #newProject .modelo#vitoria .autores { display: flex; flex: 2; align-items: center; } 
-#newProject .modelo#vitoria .autores p { font-size: 21px; margin: 0; font-weight: 700; max-width: 100%; max-height: 28px; padding: 0 5px; } 
+#newProject .modelo#vitoria .autores p { font-size: 26px; margin: 0; font-weight: 700; width: 350px; max-height: 28px; padding: 0 5px; text-align: center; } 
 #newProject .modelo#vitoria .autores .nomes { display: flex; border: 2px solid; padding: 10px 0; height: fit-content; justify-content: center; } 
-#newProject .modelo#vitoria .data p { font-weight: 600; font-size: 30px; margin: 0; padding: 0; line-height: 28px; } 
+#newProject .modelo#vitoria .data p { font-weight: 600; font-size: 24px; margin: 0; padding: 0; line-height: 31px; max-width: 280px; } 
 #newProject .modelo#vitoria footer { left: 120px; } 
 
 #newProject.story .modelo#vitoria .mask { background: url('../imgs/story/CultoDaVitoria.png'); } 
@@ -88,11 +87,11 @@
 #newProject .modelo#celebracao { flex-direction: column; padding: 50px 70px; box-sizing: border-box; justify-content: center; position: relative; } 
 #newProject .modelo#celebracao .pr { margin-right: 105px; max-width: 100%; padding: 0; display: flex; flex-direction: column; align-items: flex-end; margin-bottom: 0; } 
 #newProject .modelo#celebracao .pr p { font-weight: 600; margin: 0; padding: 0; line-height: 28px; } 
-#newProject .modelo#celebracao .pr p:first-child { font-size: 26px; max-width: 220px; font-weight: 600; max-height: 80px; display: flex; line-height: initial; align-items: flex-end; text-align: right; } 
+#newProject .modelo#celebracao .pr p:first-child { font-size: 26px; max-width: 220px; font-weight: 600; max-height: 80px;  line-height: initial;text-align: right; } 
 #newProject .modelo#celebracao .row { width: 100%; display: flex; padding: 20px 0px; justify-content: space-between; position: absolute; bottom: 55px; } 
-#newProject .modelo#celebracao .data p { max-width: 380px; font-size: 30px; margin: 0; padding: 0; font-weight: 600; max-height: 38px; } 
-#newProject .modelo#celebracao .data { display: flex; align-items: center; } 
-#newProject .modelo#celebracao .data .nomes { display: flex; border: 2px solid; padding: 10px; height: fit-content; justify-content: center; } 
+#newProject .modelo#celebracao .data p { border: 2px solid; padding: 10px; max-width: 380px; font-size: 30px; margin: 0;  font-weight: 600; max-height: 38px; } 
+#newProject .modelo#celebracao .data { text-align: center;} 
+
 #newProject .modelo#celebracao .pr p { font-weight: 600; font-size: 30px; margin: 0; padding: 0; line-height: 28px; } 
 #newProject .modelo#celebracao footer { left: 120px; } 
 
@@ -114,7 +113,7 @@
 #newProject .modelo#ebd .mask { background: url('../imgs/feed/CultoEBD.png'); background-size: cover; position: absolute; top: 0; left: 0; width: 100%; height: 100%; } 
 #newProject .modelo#ebd { flex-direction: column; padding: 50px 70px; box-sizing: border-box; justify-content: center; position: relative; } 
 #newProject .modelo#ebd .row { width: 100%; display: flex; padding: 20px 0px; justify-content: space-between; position: absolute; bottom: 55px; } 
-#newProject .modelo#ebd .data p { font-size: 30px; margin: 0; font-weight: 600; max-width: 360px; max-height: 38px; } 
+#newProject .modelo#ebd .data p { font-size: 30px; margin: 0; font-weight: 600; width: 360px; max-height: 38px; text-align: center; } 
 #newProject .modelo#ebd .data { display: flex; align-items: center; } 
 #newProject .modelo#ebd .data .nomes { display: flex; border: 2px solid; padding: 15px; height: fit-content; justify-content: center; } 
 
@@ -137,9 +136,9 @@
 #newProject .modelo#oracao footer .endereco p { margin: 0; font-weight: 700; } 
 #newProject .modelo#oracao .row { width: 100%; display: flex; padding: 20px 90px; margin-top: 170px; justify-content: space-between; } 
 #newProject .modelo#oracao .autores { display: flex; flex: 2; } 
-#newProject .modelo#oracao .autores p { font-size: 30px; margin: 0; max-width: 350px; max-height: 45px; overflow: hidden; font-weight: 700; } 
+#newProject .modelo#oracao .autores p { font-size: 30px; margin: 0; width: 280px; max-height: 34px; font-weight: 700; text-align: center; line-height: 34px;} 
 #newProject .modelo#oracao .autores .nomes { display: flex; border: 2px solid; padding: 5px; height: fit-content; } 
-#newProject .modelo#oracao .data p { font-weight: 600; font-size: 30px; margin: 0; padding: 0; line-height: 28px; max-width: 190px; max-height: 54px; } 
+#newProject .modelo#oracao .data p { font-weight: 600; font-size: 30px; margin: 0; padding: 0; line-height: 32px; max-width: 190px; max-height: 66px; } 
 
 #newProject.story .modelo#oracao .mask { background: url('../imgs/story/CultoDeOracao.png'); } 
 #newProject.story .modelo#oracao .content { z-index: 1; width: 100%; display: flex; position: absolute; bottom: 120px; left: 0; flex-direction: row-reverse; padding: 0 60px; box-sizing: border-box; } 
@@ -154,25 +153,25 @@
 
 /* Culto da Vitória */
 
-#newProject .modelo#mulher-vitoriosa .content { position: absolute; left: 0; bottom: 100px; width: 100%; padding: 0 0 0 110px; box-sizing: border-box; } 
+
+#newProject .modelo#mulher-vitoriosa .content { position: absolute; left: 0; bottom: 110px; width: 100%; padding: 0 0 0 120px; box-sizing: border-box; } 
 #newProject .modelo#mulher-vitoriosa .mask { background: url('../imgs/feed/CultoMulherVitoriosa.png'); background-size: cover; position: absolute; top: 0; left: 0; width: 100%; height: 100%; } 
 #newProject .modelo#mulher-vitoriosa { flex-direction: column; padding: 50px 70px; box-sizing: border-box; justify-content: center; position: relative; } 
-#newProject .modelo#mulher-vitoriosa .data { margin-right: 105px; max-width: 100%; padding: 0; display: flex; flex-direction: column; align-items: flex-end; margin-bottom: 25px; } 
+#newProject .modelo#mulher-vitoriosa .data { margin-right: 105px; max-width: 100%; padding: 0; display: flex; flex-direction: column; align-items: flex-end; margin-bottom: 0; } 
 #newProject .modelo#mulher-vitoriosa .data p { margin: 0; font-weight: 600; font-size: 30px; text-align: right; line-height: 28px; } 
-#newProject .modelo#mulher-vitoriosa .data p:first-child { font-size: 44px; font-weight: 600; max-height: 49px; line-height: 49px; } 
-#newProject .modelo#mulher-vitoriosa .data p:last-child { font-size: 22px; margin-top: 10px; max-width: 240px; max-height: 34px; } 
+#newProject .modelo#mulher-vitoriosa .data p { font-weight: 600; font-size: 30px; margin: 0; padding: 0; line-height: 34px; } 
 #newProject .modelo#mulher-vitoriosa .row { width: 100%; display: flex; padding: 20px 0px; justify-content: space-between; position: absolute; bottom: 55px; } 
 #newProject .modelo#mulher-vitoriosa .autores { display: flex; flex: 2; align-items: center; } 
-#newProject .modelo#mulher-vitoriosa .autores p { font-size: 23px; margin: 0; padding: 0; font-weight: 700; max-width: 100%; max-height: 24px; line-height: 24px; } 
+#newProject .modelo#mulher-vitoriosa .autores p { font-size: 26px; margin: 0; font-weight: 700; width: 350px; max-height: 28px; padding: 0 5px; text-align: center; } 
 #newProject .modelo#mulher-vitoriosa .autores .nomes { display: flex; border: 2px solid; padding: 10px 0; height: fit-content; justify-content: center; } 
-#newProject .modelo#mulher-vitoriosa .data p { font-weight: 600; font-size: 30px; margin: 0; padding: 0; line-height: 28px; } 
-#newProject .modelo#mulher-vitoriosa footer { left: 110px; } 
+#newProject .modelo#mulher-vitoriosa .data p { font-weight: 600; font-size: 24px; margin: 0; padding: 0; line-height: 31px; max-width: 280px; } 
+#newProject .modelo#mulher-vitoriosa footer { left: 120px; } 
 
 #newProject.story .modelo#mulher-vitoriosa .mask { background: url('../imgs/story/CultoMulherVitoriosa.png'); } 
 #newProject.story .modelo#mulher-vitoriosa .content { position: absolute; left: 0; bottom: 130px; width: 100%; padding: 0 60px; box-sizing: border-box; flex-direction: column; display: flex; } 
 #newProject.story .modelo#mulher-vitoriosa .autores { display: flex; flex: 2; align-items: center; width: 100%; border: none; margin-bottom: 5px; } 
-#newProject.story .modelo#mulher-vitoriosa .autores .nomes { display: flex; border: 2px solid; padding: 0px 0; height: fit-content; justify-content: center; width: 100%; } 
-#newProject.story .modelo#mulher-vitoriosa .autores p { font-size: 20px; margin: 0; line-height: 0; padding: 15px 5px; font-weight: 700; } 
+#newProject.story .modelo#mulher-vitoriosa .autores .nomes { display: flex; border: 2px solid; height: fit-content; justify-content: center; width: 100%; padding: 5px 5px; } 
+#newProject.story .modelo#mulher-vitoriosa .autores p { font-size: 20px; margin: 0; font-weight: 700; } 
 #newProject.story .modelo#mulher-vitoriosa .data { margin-right: 60px; max-width: 100%; padding: 5px; display: flex; flex-direction: row; align-items: center; margin: 0; justify-content: center; top: 50px; right: 0; width: 100%; border: 2px solid; } 
 #newProject.story .modelo#mulher-vitoriosa .data p { margin: 0; padding: 0; border: none; line-height: 28px; } 
 #newProject.story .modelo#mulher-vitoriosa .data p:first-child { font-size: 25px; font-weight: 600; max-width: 140px; max-height: 36px; display: none; } 
@@ -181,6 +180,7 @@
 #newProject.story .modelo#mulher-vitoriosa footer .endereco { text-align: left; display: flex; align-items: flex-start; justify-content: flex-start; } 
 #newProject.story .modelo#mulher-vitoriosa footer .endereco p { margin: 0; font-weight: 700; font-size: 21px; line-height: 21px; max-height: 21px; width: 100%; text-align: center; } 
  
+
 /* Culto da Santa Ceia */
 
 #newProject .modelo#santa-ceia .mask { background: url('../imgs/feed/SantaCeia.png'); background-size: cover; position: absolute; top: 0; left: 0; width: 100%; height: 100%; } 

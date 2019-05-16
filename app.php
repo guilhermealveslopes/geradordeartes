@@ -122,7 +122,7 @@
             <div class="content">
                 <div class="data">
                     <p max-char="23" startOn="12" minFontSize="20" >terça-feira</p>
-                    <p>às 19h</p>
+                    <p max-char="23" startOn="12" minFontSize="20" >às 19h</p>
                 </div>
                 
                 <footer>
@@ -141,7 +141,7 @@
             <div class="row">
                     <div class="col autores">
                         <div class="nomes">
-                            <p max-char="20" startOn="10">quarta às 19h</p>
+                            <p max-char="27" startOn="20" minFontSize="20">12 de outubro às 19h</p>
                         </div>
                     </div>
                     <div class="col data">
@@ -164,12 +164,12 @@
             <div class="content">
                 <div class="col autores">
                     <div class="nomes">
-                        <p>Pr. Silmar Coelho Samuel Lima</p>
+                        <p max-char="27" startOn="21" minFontSize="20">12 de outubro às 19h</p>
                     </div>
                 </div>
                 <div class="col data">
-                    <p>quinta</p>
-                    <p>12 de Outubro às 19h</p>
+                    <p>Pr. Silmar Coelho
+                     e Samuel Lima</p>
                 </div>
             </div>
             <footer>
@@ -186,7 +186,7 @@
             <div class="content">
                 <div class="col data">
                     <div class="nomes">
-                        <p>domingo às 18h30</p>
+                        <p max-char="27" startOn="20" minFontSize="20" >domingo às 18h30</p>
                     </div>
                 </div>
                 <div class="col pr">
@@ -206,7 +206,7 @@
             <div class="content">
                 <div class="col data">
                     <div class="nomes">
-                        <p>domingo às 18h30</p>
+                        <p max-char="25" startOn="20" minFontSize="24" >domingo às 18h30</p>
                     </div>
                 </div>
                 <footer>
@@ -224,7 +224,7 @@
                 <div class="row">
                     <div class="col autores">
                         <div class="nomes">
-                            <p>quarta às 19h</p>
+                            <p max-char="23" startOn="15" minFontSize="20">quarta às 19h</p>
                         </div>
                     </div>
                     <div class="col data">
@@ -241,18 +241,18 @@
             </footer>
         </div>
 
-        <!-- Culto da Vitória -->
+        <!-- Culto da MulherVitoriosa -->
         <div class="model-mulher-vitoriosa">
             <div class="mask editDisabled"></div>
             <div class="content">
                 <div class="col autores">
                     <div class="nomes">
-                        <p>Pr. Silmar Coelho Samuel Lima</p>
+                        <p max-char="27" startOn="21" minFontSize="20">12 de outubro às 19h</p>
                     </div>
                 </div>
                 <div class="col data">
-                    <p>quinta</p>
-                    <p>12 de Outubro às 19h</p>
+                    <p>Pr. Silmar Coelho
+                     e Samuel Lima</p>
                 </div>
             </div>
             <footer>
@@ -269,7 +269,7 @@
             <div class="content">
                 <div class="row">
                     <div class="col data">
-                        <p>domingo às 9h30 e 18h30</p>
+                        <p max-char="33" startOn="23" minFontSize="24" >domingo às 9h30 e 18h30</p>
                     </div>
                 </div>
             </div>
