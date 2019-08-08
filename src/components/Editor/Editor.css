@@ -1,0 +1,78 @@
+
+
+.App-editor, .App-editor .container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    margin: 3.6vw;
+}
+
+.contentBox {
+    display: flex;
+    flex: 5;
+    justify-content: flex-end;
+}
+ 
+.contentFields {
+    flex:3;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+}
+.contentFields .fields {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    
+}
+
+.contentFields .fields input{
+    padding-bottom: 15px;
+}
+
+.MuiInput-root {
+    margin-bottom: 10px;
+}
+
+.App-editor #boxToEdit {
+    background-image: url('../../assets/img/default.png');
+    width: 80vh;
+    background-position: center;
+    background-size: cover;
+    height: 80vh;
+    margin: 0px 0;
+}
+
+.imgChange {
+    height: 270px;
+    background: #ececec;
+    border-radius: 10px;
+    border: 2px dashed #aaaaaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+    transition: .5s ease-in-out;
+    outline: none;
+}
+
+.imgChange:hover {
+    cursor: pointer;
+    background: #f0f3f7;
+}
+
+.imgChange svg {
+    height: 50px;
+    width: 40px;
+    color: #bebebe;
+    transition: .5s ease-in-out;
+}
+
+.imgChange:hover svg {
+    color: #3f51b5;
+}
+
+.fileInput { 
+    display:none;
+}
