@@ -316,19 +316,19 @@ function readURL(input) {
         };
 
         reader.readAsDataURL(input.files[0]);
-        setTimeout(() => {
+        // setTimeout(() => {
             
-            console.log('[####] comprimindo imagem...');
-            source_img = document.getElementById('uploadedImg');
-            target_img = document.getElementById('shareImg');
+        //     console.log('[####] comprimindo imagem...');
+        //     source_img = document.getElementById('uploadedImg');
+        //     target_img = document.getElementById('shareImg');
         
-            var quality =  60;
-            output_format = 'jpg';
-            target_img.src = jic.compress(source_img,quality,output_format).src;  
-            $(target_img).addClass('compreesed');
-            console.log('[####] imagem comprimida com sucesso!');
-            $('.loading-photo h2').html('Comprimindo imagem');
-        }, 500);
+        //     var quality =  60;
+        //     output_format = 'jpg';
+        //     // target_img.src = jic.compress(source_img,quality,output_format).src;  
+        //     $(target_img).addClass('compreesed');
+        //     console.log('[####] imagem comprimida com sucesso!');
+        //     $('.loading-photo h2').html('Comprimindo imagem');
+        // }, 500);
         setTimeout(() => {
             $('.loading-photo').removeClass('onLoad');
         }, 500);
