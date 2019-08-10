@@ -9,7 +9,7 @@
     background-image:url('./feed/default.png');
 }
 
-.Celebracao #boxToEdit .defaultBackground.story{
+#root.story .Celebracao #boxToEdit .defaultBackground{
     background-image:url('./story/default.png');
 }
 

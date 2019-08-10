@@ -28,6 +28,7 @@ import BackButton from './components/Header/BackButton/BackButton';
 ////////////////////////////////////////////
 
 let ThemeContext = React.createContext('');
+let backgroundImages = React.createContext('');
 
 let blockType = [
   ["Celebração",  Celebracao],
@@ -81,11 +82,9 @@ class Editor extends Component {
     
   constructor(props) {
       super(props);
-      this.onDrop = (files) => {
-        this.setState({files})
-      };
       this.state = {
-      files: []
+      files: [],
+      
     }
       this.handleInputChange = this.handleInputChange.bind(this)
     }
@@ -102,6 +101,22 @@ class Editor extends Component {
         window.updateTopMostParent(3); 
     }
 
+    changeBackgroundUploadModel(event){
+      event.preventDefault();
+      backgroundImages = React.createContext(event.currentTarget.dataset.images);
+
+      if(backgroundImages._currentValue == 'two'){
+        document.getElementsByClassName('dualBackground')[0].classList.add('active');
+      }
+
+      let backgroundOptions = document.getElementsByClassName('backgroundOptions')[0];
+      backgroundOptions.classList.remove('active');
+
+      this.forceUpdate();
+     
+      
+    }
+
     render() { 
 
       const files = this.state.files.map(file => (
@@ -113,13 +128,33 @@ class Editor extends Component {
       let Module;
       blockType.map( function( modules, i, array ) {
         if(modules[0] == ThemeContext._currentValue){
-          console.log('teste');
           Module = modules[1];
         }
       })
       
       return ( 
-        <Module />
+        <div>
+          <div className="backgroundOptions">
+            <div className="heading">
+              <h4>Escolha o modelo</h4>
+            </div>
+            <div className="options">
+              <div className="option">
+                <a onClick={this.changeBackgroundUploadModel.bind(this)} data-images="one" href="">
+                  <img src={require('./assets/img/single-background.png')} alt=""/>
+                </a>
+                <span>Uma imagem</span>
+              </div>
+              <div className="option">
+                <a onClick={this.changeBackgroundUploadModel.bind(this)} data-images="two" href="">
+                  <img src={require('./assets/img/dual-background.png')} alt=""/>
+                </a>
+                <span>Duas imagens</span>
+              </div>
+            </div>
+          </div>
+          <Module backgroundtype={backgroundImages._currentValue}/>
+        </div>
        );
     }
 }
@@ -195,6 +230,7 @@ class App extends React.Component {
 
  
   render() { 
+    console.log(backgroundImages);
     return (
       <main className="App-container">
         <div className="App-header">

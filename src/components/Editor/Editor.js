@@ -7,8 +7,6 @@ import './Editor.css';
 import Celebracao from '../Models/celebracao';
 
 
-
-
 class Editor extends Component {
     
     constructor() {
@@ -33,8 +31,14 @@ class Editor extends Component {
 
       getCANVAS(){
         let node = document.getElementById('boxToEdit');
-        domtoimage.toBlob(node)
-        .then(function (blob) {
+        domtoimage.toBlob(node, {
+          width: 1920,
+          height: 1080,
+          style: {
+            'transform': 'scale(2)',
+            'transform-origin': 'top left'
+          }
+        }).then(function (blob) {
             window.saveAs(blob, 'my-node.png');
         });
     }
