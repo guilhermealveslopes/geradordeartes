@@ -11,6 +11,7 @@ class BackButton extends Component {
       updateBackButton() {
           window.updateBackButton(1); 
           console.log('update');
+          let backgroundImages = React.createContext('')
       }
     
       render() { 

@@ -120,6 +120,8 @@ class Celebracao extends Component {
         let renderBackgroundOptions;
         let positionBackground;
 
+        console.log(this.props.backgroundtype);
+
         if(this.props.backgroundtype === "two"){
             let clearBoxToEdit = document.getElementById('boxToEdit');
             let dumpoption = document.getElementById('dumpoption');
@@ -171,10 +173,10 @@ class Celebracao extends Component {
             let changeBackgroundType = document.getElementsByClassName('changeBackgroundType')[0];
             let dualBackground  = document.getElementsByClassName('dualBackground ')[0];
 
-            imgChangeOptions.classList.add('active');
-            dumpoption.classList.add('hide');
-            changeBackgroundType.classList.add('active');
-            dualBackground.classList.remove('active');
+            if(imgChangeOptions) imgChangeOptions.classList.add('active');
+            if(dumpoption) dumpoption.classList.add('hide');
+            if(changeBackgroundType) changeBackgroundType.classList.add('active');
+            if(dualBackground) dualBackground.classList.remove('active');
             
             positionBackground = 
             <div className="backgroundPosition single">
