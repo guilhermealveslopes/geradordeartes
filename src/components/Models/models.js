@@ -4,6 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { FaImage } from 'react-icons/fa';
+import * as rasterizeHTML from 'rasterizehtml';
 
 let backgroundImages = React.createContext('');
 
@@ -22,12 +23,11 @@ class Models extends Component {
         this.changeModelType = this.changeModelType.bind(this)
       }
         handleInputChange(e){
+            
           const target = e.target;
           const value = target.type === 'checkbox' ? target.checked : target.value;
           const name = target.name;
-          this.setState({
-              [name]: value
-          });
+          document.getElementsByClassName(name)[0].innerHTML = value;
 
       }
 
@@ -77,7 +77,16 @@ class Models extends Component {
         var date = new Date();
         let formatedDate = date.getDate() + '/'+ (date.getMonth() + 1) + '/'+ date.getFullYear()+ '-'+ date.getHours()+ '-'+ date.getMinutes()+ '-'+ date.getSeconds();
         let node = document.getElementById('boxToEdit');
-        domtoimage.toBlob(node)
+
+       
+        var canvas = document.getElementById("canvas"),
+        html_container = document.getElementById("boxToEdit"),
+        html = html_container.innerHTML;
+
+        domtoimage.toPng(node, {
+            width: 1080,
+            height: 1080,
+          })
         .then(function (blob) {
             window.saveAs(blob, 'reino-criativo-'+formatedDate+'.png');
         });
@@ -244,15 +253,7 @@ class Models extends Component {
                                 <div id="dual-two" className="two option"></div>
                             </div>
                             <div className="defaultBackground feed">
-                                <div className="boxContent">
-                                    <div className="row">
-                                        <div className="date">{data}</div>
-                                        <div className="minister">{autor}</div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="address">{endereco}</div>
-                                    </div>
-                                </div>
+                                {this.props.structure}
                             </div>
                         </div>
                     </div>
@@ -280,9 +281,9 @@ class Models extends Component {
                             </div>
                             <input type="file" className="fileInput" onChange={this.handleBackgroundChange}  accept="image/*" />
                             
-                            <TextField name="data" placeholder="Nome" onChange={this.handleInputChange} value={data} />
-                            <TextField name="endereco" onChange={this.handleInputChange} value={endereco} />
-                            <TextField name="pastor" onChange={this.handleInputChange} value={autor} />
+                            <TextField name="lineOne" placeholder="Nome" onChange={this.handleInputChange} value={data} />
+                            <TextField name="lineTwo" onChange={this.handleInputChange} value={endereco} />
+                            <TextField name="lineThree" onChange={this.handleInputChange} value={autor} />
                             <Button onClick={this.getCANVAS} variant="contained" color="primary">
                                 GERAR
                             </Button>

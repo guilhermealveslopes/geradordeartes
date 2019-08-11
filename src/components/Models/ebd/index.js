@@ -9,22 +9,36 @@ import { FaImage } from 'react-icons/fa';
 import defaultImage from '../../../assets/img/default.png';
 import Models from '../models';
 
+let dataStructure;
+
 class Ebd extends Component {
-    constructor() {
+   constructor() {
         super();
         this.state = {
             data: 'domingo às 19h', 
             endereco: 'rua montevidéu, 900 penha - rj', 
-            pastor: 'Pr. Silas Malafaia',
+            autor: 'Pr. Silas Malafaia',
             backgroundImage: '',
             modelType: '',
         }
     }
       
     render() {
+
+       dataStructure = 
+            <div className="boxContent">
+                <div className="row">
+                    <div className="lineOne">{this.state.data}</div>
+                    <div className="lineTwo">{this.state.autor}</div>
+                </div>
+                <div className="row">
+                    <div className="lineThree">{this.state.endereco}</div>
+                </div>
+            </div>
+
         return (
             <MuiThemeProvider>
-                <Models datadia={this.state.data} dataendereco={this.state.endereco} dataautor={this.state.pastor}/>
+                <Models structure={dataStructure}/>
             </MuiThemeProvider>
         );
     }
