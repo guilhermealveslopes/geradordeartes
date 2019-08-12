@@ -38,7 +38,7 @@ class Celebracao extends Component {
 
         return (
             <MuiThemeProvider>
-                <Models structure={dataStructure}/>
+                <Models datadia={this.state.data} dataendereco={this.state.endereco} dataautor={this.state.autor} structure={dataStructure}/>
             </MuiThemeProvider>
         );
     }

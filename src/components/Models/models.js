@@ -4,7 +4,9 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { FaImage } from 'react-icons/fa';
-import * as rasterizeHTML from 'rasterizehtml';
+import loader from '../../assets/img/loading.gif';
+import SweetAlert from 'sweetalert-react';
+
 
 let backgroundImages = React.createContext('');
 
@@ -70,27 +72,80 @@ class Models extends Component {
         }
     }
 
-    getCANVAS(){
+    prepareDownload(event) {
 
-        // RENDER HOURS //
+        let body;
 
-        var date = new Date();
-        let formatedDate = date.getDate() + '/'+ (date.getMonth() + 1) + '/'+ date.getFullYear()+ '-'+ date.getHours()+ '-'+ date.getMinutes()+ '-'+ date.getSeconds();
-        let node = document.getElementById('boxToEdit');
+        if(document.getElementById('downloadMask')){
+            document.getElementById('downloadMask').classList = '';
+        }
+        else{
 
-       
-        var canvas = document.getElementById("canvas"),
-        html_container = document.getElementById("boxToEdit"),
-        html = html_container.innerHTML;
+            // Display Wait for load screen //
 
-        domtoimage.toPng(node, {
-            width: 1080,
-            height: 1080,
-          })
-        .then(function (blob) {
-            window.saveAs(blob, 'reino-criativo-'+formatedDate+'.png');
-        });
+            let root = document.getElementById('root');
+            let newMask = document.createElement('div');
+            newMask.id = 'downloadMask';
+            newMask.innerHTML = '<h3>Gerando seu arquivo...</h3><img src="'+loader+'">';
+            root.appendChild(newMask);
+            body = document.getElementsByTagName('body')[0];
+            body.style.overflow = 'hidden';
+
+        }
+
+        setTimeout(function(){ 
+            // Add Export Class and Download image //
+            document.getElementById('boxToEdit').classList.add('export');
+
+            setTimeout(function(){
+
+                 // RENDER HOURS //
+
+                 var date = new Date();
+                 let formatedDate = date.getDate() + '/'+ (date.getMonth() + 1) + '/'+ date.getFullYear()+ '-'+ date.getHours()+ '-'+ date.getMinutes()+ '-'+ date.getSeconds();
+                 let node = document.getElementById('boxToEdit');
+
+             
+                 var canvas = document.getElementById("canvas"),
+                 html_container = document.getElementById("boxToEdit"),
+                 html = html_container.innerHTML;
+
+                 let defaultWidth = 1080;
+                 let defaultHeight = 1080;
+
+                 if(document.getElementById('root').className === 'story'){
+                     defaultWidth = 1080;
+                     defaultHeight = 1920;  
+                 }
+
+                 domtoimage.toPng(node, {
+                     width: defaultWidth,
+                     height: defaultHeight,
+                 })
+                 .then(function (blob) {
+                     window.saveAs(blob, 'reino-criativo-'+formatedDate+'.png');
+                 });
+
+                 document.getElementById('boxToEdit').classList.remove('export');
+                               
+                setTimeout(function(){
+
+                    body.style.overflow = 'auto';
+                    document.getElementById('downloadMask').classList.add('hide');
+                    document.getElementById('appNotification').classList.add('active');
+
+                    setTimeout(function(){
+                        document.getElementById('appNotification').classList.remove('active');
+                    }, 4500);
+
+                }, 1000);
+                
+             }, 1000);
+        
+        }, 500);
+
     }
+
 
     changeModelType(e){
         let modelType = e.target.innerHTML;
@@ -148,10 +203,10 @@ class Models extends Component {
             let imgChangeOptions = document.getElementsByClassName('imgChangeOptions')[0];
             let changeBackgroundType = document.getElementsByClassName('changeBackgroundType')[0];
 
-            imgChangeOptions.classList.add('active');
-            dumpoption.classList.add('hide');
-            changeBackgroundType.classList.add('active');
-            clearBoxToEdit.style.backgroundImage = '';
+            if(imgChangeOptions) imgChangeOptions.classList.add('active');
+            if(dumpoption) dumpoption.classList.add('hide');
+            if(changeBackgroundType) changeBackgroundType.classList.add('active');
+            if(clearBoxToEdit) clearBoxToEdit.style.backgroundImage = '';
 
             positionBackground = 
                 <div className="backgroundPosition dual">
@@ -224,8 +279,12 @@ class Models extends Component {
 
         return (
             <MuiThemeProvider>
-                
             <div className="App-editor">
+                <div id="appNotification">
+                    <h3>Sucesso!</h3>
+                    <h5>Seu arquivo foi gerado.</h5>
+                    <span>Obrigado por usar o nosso gerador.</span>
+                </div>
                 <div className="backgroundOptions">
                     <div className="heading">
                     <h4>Escolha o modelo</h4>
@@ -284,7 +343,7 @@ class Models extends Component {
                             <TextField name="lineOne" placeholder="Nome" onChange={this.handleInputChange} value={data} />
                             <TextField name="lineTwo" onChange={this.handleInputChange} value={endereco} />
                             <TextField name="lineThree" onChange={this.handleInputChange} value={autor} />
-                            <Button onClick={this.getCANVAS} variant="contained" color="primary">
+                            <Button onClick={this.prepareDownload} variant="contained" color="primary">
                                 GERAR
                             </Button>
                         </div>
