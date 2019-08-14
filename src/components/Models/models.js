@@ -5,7 +5,6 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { FaImage } from 'react-icons/fa';
 import loader from '../../assets/img/loading.gif';
-import SweetAlert from 'sweetalert-react';
 
 
 let backgroundImages = React.createContext('');
@@ -14,7 +13,7 @@ class Models extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: this.props.datadia, endereco: this.props.dataendereco, autor: this.props.dataautor,
+            lineOne: this.props.datadia, lineTwo: this.props.dataendereco, lineThree: this.props.dataautor,
             backgroundImage: '',
             modelType: '',
             
@@ -29,8 +28,13 @@ class Models extends Component {
           const target = e.target;
           const value = target.type === 'checkbox' ? target.checked : target.value;
           const name = target.name;
-          document.getElementsByClassName(name)[0].innerHTML = value;
 
+          this.setState({
+			[name]: value
+          })
+
+          document.querySelectorAll('input[name$="'+name+'"]')[0].value = this.state[name];
+          document.getElementsByClassName(name)[0].innerHTML = value;
       }
 
     triggerInput = (event) => {
@@ -195,8 +199,6 @@ class Models extends Component {
         let renderBackgroundOptions;
         let positionBackground;
 
-        const { data, endereco, autor } = this.state;
-
         if(backgroundImages._currentValue === "two"){
             let clearBoxToEdit = document.getElementById('boxToEdit');
             let dumpoption = document.getElementById('dumpoption');
@@ -340,9 +342,9 @@ class Models extends Component {
                             </div>
                             <input type="file" className="fileInput" onChange={this.handleBackgroundChange}  accept="image/*" />
                             
-                            <TextField name="lineOne" placeholder="Nome" onChange={this.handleInputChange} value={data} />
-                            <TextField name="lineTwo" onChange={this.handleInputChange} value={endereco} />
-                            <TextField name="lineThree" onChange={this.handleInputChange} value={autor} />
+                            <TextField name="lineOne" placeholder="Nome" onChange={this.handleInputChange.bind(this)} value={this.state.lineOne} />
+                            <TextField name="lineTwo" onChange={this.handleInputChange.bind(this)} value={this.state.lineTwo} />
+                            <TextField name="lineThree" onChange={this.handleInputChange.bind(this)} value={this.state.lineThree} />
                             <Button onClick={this.prepareDownload} variant="contained" color="primary">
                                 GERAR
                             </Button>
